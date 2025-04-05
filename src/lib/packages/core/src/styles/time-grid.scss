@@ -25,8 +25,8 @@
     }
 
     .ec-bg-events {        /*GUSA*/
-        background-color: #4682B4;  
-	opacity: 0.1;
+        background-color: #F0F8FF;  
+	opacity: 0.9;
     }
 
     .ec-bg-event {
@@ -42,11 +42,16 @@
         text-align: right;
     }
 
-    .ec-header .ec-time,
-    .ec-all-day .ec-time {
+    .ec-header .ec-time {
         visibility: hidden;
         overflow-y: hidden;
         height: 0;
+    }
+
+    .ec-all-day .ec-time {
+        visibility: hidden;
+        overflow-y: hidden;
+        height: 1.5px;
     }
 
     .ec-time,
