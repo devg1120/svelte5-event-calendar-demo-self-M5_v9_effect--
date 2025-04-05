@@ -277,7 +277,7 @@
         : ''}{highlight ? ' ' + $theme.highlight : ''}{disabled ? ' ' + $theme.disabled : ''}"
     role="cell"
     onpointerdown={$_interaction.action?.select}
-    style="--allDaySlotHeight: {allDaySlotHeight}px"
+    style=" --allDaySlotHeight: {allDaySlotHeight}px"
 >
     <div class={$theme.dayHead}>
         <time datetime={toISOString(date, 10)} use:setContent={$_intlDayCell.format(date)}></time>

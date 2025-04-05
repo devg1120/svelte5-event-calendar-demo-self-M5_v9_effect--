@@ -52,8 +52,8 @@
         // Run reposition only when events get changed
         //reposition();                                                      //BUG
 
-        console.log("bgChunks", bgChunks);
-        console.log("longChunks", longChunks);
+        //console.log("bgChunks", bgChunks);
+        //console.log("longChunks", longChunks);
         //--------------------------------------------
         // allDay_week_array
 
@@ -105,7 +105,7 @@
         //console.log("slotn:", slotn)
         let allDaySlotHeight = 30 * slotn;
 
-        console.log("week_array", week_array);
+        //console.log("week_array", week_array);
 
         return { chunks, bgChunks, longChunks, week_array, allDaySlotHeight };
     });

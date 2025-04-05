@@ -24,10 +24,16 @@
         }
     }
 
+    .ec-bg-events {        /*GUSA*/
+        background-color: #4682B4;  
+	opacity: 0.1;
+    }
+
     .ec-bg-event {
         width: 100%;
         z-index: 1;
     }
+
 
     .ec-time {
         position: relative;
@@ -43,7 +49,7 @@
         height: 0;
     }
 
-    .ec-time ,
+    .ec-time,
     .ec-line {
         height: 24px;
     }

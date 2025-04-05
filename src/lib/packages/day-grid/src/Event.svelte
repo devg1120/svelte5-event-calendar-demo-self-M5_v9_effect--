@@ -104,6 +104,8 @@
                     //console.log(chunk.next_week_continue)
                     style =
                         `width:calc(${chunk.days * 100}% + ${(chunk.days - 1) * 2}px);` + `margin-top:${marginTop}px;`;
+                    //style += "   z-index: 100;";
+
                     if (!chunk.prev_week_continue) {
                         style += "   border-top-left-radius: 20px;";
                         style += "   border-bottom-left-radius: 20px;";
