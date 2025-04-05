@@ -60,8 +60,12 @@
 
         let event_max = chunks.length;
         let week_array = [];
-	let weeks = dates.length /7;
-	let max_days = 7 * weeks;
+	let max_days = dates.length + 10;
+
+	//let weeks = dates.length /7;
+	//let max_days = 7 * weeks;
+	//console.log("max_days", max_days)
+
         //for (var i = 0; i < 7; i++) {
         for (var i = 0; i < max_days; i++) {
             week_array.push(Array(event_max).fill(0));
@@ -86,6 +90,7 @@
                 }
             }
             for (var i = 0; i < max_days; i++) {
+            //for (var i = 0; i < 7; i++) {
                 for (let x = week_array[i].length - 1; (x) => 0; x--) {
                     if (week_array[i][x] != 0) {
                         break;
@@ -97,6 +102,7 @@
         }
         let slotn = 0;
         for (var i = 0; i < max_days; i++) {
+        //for (var i = 0; i < 7; i++) {
             for (let x = 0; x < week_array[i].length; x++) {
                 if (week_array[i][x] != -3) {
                     if (slotn < x + 1) {
