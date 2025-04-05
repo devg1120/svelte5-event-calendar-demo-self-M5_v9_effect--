@@ -1,0 +1,19 @@
+
+/src/lib/packages/time-grid/src/Body.svelte
+
+
+<div bind:this={el} class="{$theme.body}{compact ? ' ' + $theme.compact : ''}">
+    <div class={$theme.content}>
+        <Section>
+            {#snippet lines()}
+                {#each lines as line}
+                    <div class={$theme.line}></div>
+                {/each}
+            {/snippet}
+            {@render children?.()}
+        </Section>
+    </div>
+</div>
+
+
+
