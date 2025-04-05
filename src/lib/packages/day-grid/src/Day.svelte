@@ -68,6 +68,8 @@
         otherMonth = $derived(date.getUTCMonth() !== $currentDate.getUTCMonth()),
         highlight = $derived($highlightedDates.some((d) => datesEqual(d, date))),
         disabled = $state();
+    let isHoliday = $derived(date.holiday);
+    let holidayName = $derived(date.holiday_name);
     let hiddenEvents = $state(new Set()); // hidden events of this day
     let moreLink = $state("");
     let showPopup = $state();
@@ -274,7 +276,7 @@
     bind:this={el}
     class="{$theme.day} {$theme.weekdays?.[date.getUTCDay()]}{isToday ? ' ' + $theme.today : ''}{otherMonth
         ? ' ' + $theme.otherMonth
-        : ''}{highlight ? ' ' + $theme.highlight : ''}{disabled ? ' ' + $theme.disabled : ''}"
+        : ''}{highlight ? ' ' + $theme.highlight : ''}{disabled ? ' ' + $theme.disabled : ''} {isHoliday ? 'ec-day-holiday' : ' '}"
     role="cell"
     onpointerdown={$_interaction.action?.select}
     style=" --allDaySlotHeight: {allDaySlotHeight}px"
@@ -283,6 +285,9 @@
         <time datetime={toISOString(date, 10)} use:setContent={$_intlDayCell.format(date)}></time>
         {#if showWeekNumber}
             <span class={$theme.weekNumber} use:setContent={weekNumber}></span>
+        {/if}
+        {#if isHoliday}
+	     <span>{holidayName}</span>
         {/if}
     </div>
     <!--

@@ -28,6 +28,8 @@
     let state = new State(plugins, options);
 
     setContext("state", state);
+    //console.log(options.holidays);
+    setContext("holidays", options.holidays);
 
     let {
         _viewComponent,

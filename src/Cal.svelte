@@ -26,6 +26,7 @@
         allDaySlot: true,
         scrollTime: "09:00:00",
         events: createEvents(),
+	holidays: createHolidays(),
         views: {
 	    dayGridMonth: {
                        duration: { months: 1 },
@@ -81,6 +82,37 @@
 
     function toggleAllDay() {
         options.allDaySlot = !options.allDaySlot;
+    }
+
+
+
+
+    function dateToString(date) {
+       const year = date.getFullYear().toString().padStart(4, '0');
+       const month = (date.getMonth() + 1).toString().padStart(2, '0');
+       const day = date.getDate().toString().padStart(2, '0');
+       const yyyymmdd = year + "/" + month + "/" + day
+       return yyyymmdd
+    }
+    function createHolidays() {
+
+        let dt1 = new Date();
+        dt1.setDate(dt1.getDate() + 3);
+
+        let dt2 = new Date();
+        dt2.setDate(dt2.getDate() + 6);
+
+        let holidays = [
+           {
+	     "name" : "今日の日",
+	     "date":  dateToString(dt1)
+	    },
+           {
+	     "name" : "明日の日",
+	     "date":  dateToString(dt2)
+	    }
+	];
+        return holidays;
     }
 
     function createEvents() {
