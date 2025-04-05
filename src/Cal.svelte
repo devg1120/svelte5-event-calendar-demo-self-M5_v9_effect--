@@ -27,7 +27,13 @@
         scrollTime: "09:00:00",
         events: createEvents(),
         views: {
-            timeGridWeek: { pointer: true },
+            timeGridWeek: { pointer: true ,
+                            duration: { weeks: 1 },
+	    },
+            timeGridDay:  {
+                       duration: { days: 1 },
+	    },
+
             resourceTimeGridWeek: { pointer: true },
             resourceTimelineWeek: {
                 pointer: true,

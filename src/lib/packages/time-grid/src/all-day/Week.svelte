@@ -54,12 +54,16 @@
 
         //console.log("bgChunks", bgChunks);
         //console.log("longChunks", longChunks);
+        //console.log("dates.length", dates.length);
         //--------------------------------------------
         // allDay_week_array
 
         let event_max = chunks.length;
         let week_array = [];
-        for (var i = 0; i < 7; i++) {
+	let weeks = dates.length /7;
+	let max_days = 7 * weeks;
+        //for (var i = 0; i < 7; i++) {
+        for (var i = 0; i < max_days; i++) {
             week_array.push(Array(event_max).fill(0));
         }
 
@@ -75,14 +79,13 @@
                     if (week_array[week_index][c] == 0) {
                         week_array[week_index][c] = event_no;
                         for (var s = 1; s < chunk.days; s++) {
-                            //week_array[week_index+s][c] = event_no;
                             week_array[week_index + s][c] = -1;
                         }
                         break;
                     }
                 }
             }
-            for (var i = 0; i < 7; i++) {
+            for (var i = 0; i < max_days; i++) {
                 for (let x = week_array[i].length - 1; (x) => 0; x--) {
                     if (week_array[i][x] != 0) {
                         break;
@@ -93,7 +96,7 @@
             //console.log(week_array)
         }
         let slotn = 0;
-        for (var i = 0; i < 7; i++) {
+        for (var i = 0; i < max_days; i++) {
             for (let x = 0; x < week_array[i].length; x++) {
                 if (week_array[i][x] != -3) {
                     if (slotn < x + 1) {
