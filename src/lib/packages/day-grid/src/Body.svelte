@@ -7,8 +7,8 @@
     let { _bodyEl, _viewDates, _hiddenEvents, dayMaxEvents, hiddenDays, theme } = getContext("state");
 
     let holidays = getContext("holidays");
-    console.log("holidays", holidays)
-    console.log("_viewDates", _viewDates)
+    //console.log("holidays", holidays)
+    //console.log("_viewDates", _viewDates)
 
 
     let weeks = $state();

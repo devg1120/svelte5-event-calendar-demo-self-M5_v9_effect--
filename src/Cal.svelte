@@ -11,8 +11,8 @@
     //let plugins = [TimeGrid, DayGrid,  ResourceTimeGrid, ResourceTimeline, Interaction];
     let options: Calendar.Options = $state({
         //let options: Calendar.Options = {
-        view: "dayGridMonth",
-        //view: "timeGridWeek",
+        //view: "dayGridMonth",
+        view: "timeGridWeek",
         //view: 'timeGridDay',
         headerToolbar: {
             start: "prev,next today",
@@ -32,10 +32,13 @@
                        duration: { months: 1 },
 	    },
             timeGridWeek: { pointer: true ,
-                            duration: { weeks: 2 },
+                            duration: { weeks: 1 },
 	    },
             timeGridDay:  {
                        duration: { days: 1 },
+		       dayHeaderFormat: {month: 'numeric',
+		                         day: 'numeric',
+					 weekday: 'short'},
 	    },
 
             resourceTimeGridWeek: { pointer: true },
